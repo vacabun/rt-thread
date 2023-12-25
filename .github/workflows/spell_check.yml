@@ -19,7 +19,6 @@ jobs:
       actions: read
       security-events: write
     steps:
-    - uses: actions/checkout@v4.0.0
     - name: output ignore info
       run: |
         echo "> If any words shown as incorrect are spelled correctly, please add them to .github/actions/spelling/allow.txt." >> $GITHUB_STEP_SUMMARY
@@ -27,6 +26,8 @@ jobs:
       id: spelling
       uses: check-spelling/check-spelling@main
       with:
+        checkout: true
+        check_file_names: 0
         only_check_changed_files: 1
         post_comment: 0
         extra_dictionaries:
