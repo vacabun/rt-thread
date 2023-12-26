@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - ci_spell_check_change_path_debug
     paths:
       - 'documentation/**'
   pull_request:
